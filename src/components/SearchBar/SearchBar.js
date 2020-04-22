@@ -26,14 +26,15 @@ class SearchBar extends React.Component {
                 </div>
                 <div className ="SearchBar-fields">
                     <input placeholder="Search Businessess"/>
-                    <input placeholder="where" />
-
+                    <input placeholder="where?" />
                 </div>
                 <div className="SearchBar-submit">
                     <a>Lets Go</a>
-                    
                 </div>
             </div>
            )
      }
 }
+
+
+export default SearchBar;
