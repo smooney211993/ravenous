@@ -13,6 +13,6 @@ class SearchBar extends React.Component {
             return Object.keys(sortByOptions).map((sortByOption)=>{
                 let sortByOptionsValue = sortByOptions[sortByOption]
                 return <li key={sortByOptionsValue}> {sortByOption} </li>
-            })
+            });
     }
 }
