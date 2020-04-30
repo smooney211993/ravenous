@@ -17,14 +17,30 @@ class SearchBar extends React.Component {
             sortBy : "best_match"
 
         }
-
+        
     }
+    
+    handleSearch(event){
+        this.props.searchYelp(this.state.term, this.state.location, this.state.sortBy);
+        event.preventDefault();
+    }
+
     getSortByClass(sortByOption){
       return sortByOption ===this.state.sortBy ? 'active' : ''
     }
 
     handleSortByChange(sortByOption){
-        this.setState({ sortBy: sortByOption})
+        this.setState({ sortBy: sortByOption});
+    }
+
+    handleTermChange(event){
+        this.setState({term: event.target.value});
+
+    }
+
+    handleLocationChange(event){
+        this.setState({location: event.target.value});
+
     }
 
     renderSortByOptions(){
@@ -39,7 +55,9 @@ class SearchBar extends React.Component {
     }
 
     render () {
+        console.log(`this is the state ${this.state.location}`)
         return (
+        
             <div className="SearchBar">
                 <div className="SearchBar-sort-options">
                     <ul>
@@ -47,11 +65,11 @@ class SearchBar extends React.Component {
                     </ul>
                 </div>
                 <div className ="SearchBar-fields">
-                    <input placeholder="Search Businessess"/>
-                    <input placeholder="where?" />
+                    <input placeholder="Search Businessess" onChange={(event)=>{this.handleTermChange(event)}}/>
+                    <input placeholder="where?" onChange={(event)=>{this.handleLocationChange(event)}}/>
                 </div>
                 <div className="SearchBar-submit">
-                    <a>Lets Go</a>
+                    <a onClick={(event)=>{this.handleSearch(event)}}>Lets Go</a>
                 </div>
             </div>
            )
