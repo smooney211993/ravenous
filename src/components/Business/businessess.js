@@ -8,7 +8,8 @@ state: 'NY',
 zipCode: '10101',
 category: 'Italian',
 rating: 4.5,
-reviewCount: 90}
+reviewCount: 90
+}
 const businessess = [business,business,business,business,business,business]
 
 export default businessess;

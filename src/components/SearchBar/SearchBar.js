@@ -56,6 +56,7 @@ class SearchBar extends React.Component {
 
     render () {
         console.log(`this is the state ${this.state.location}`)
+        console.log(`this is the state app ${this.props.state}`)
         return (
         
             <div className="SearchBar">
