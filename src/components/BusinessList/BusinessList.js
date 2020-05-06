@@ -7,7 +7,7 @@ class BusinessList extends React.Component {
         return (
             <div className="BusinessList">
                 {this.props.businessess.map((user, i)=>{
-                    return <Business 
+                    return (<Business 
                     key={i}
                     imageSrc ={this.props.businessess[i].imageSrc}
                     name={this.props.businessess[i].name}
@@ -19,7 +19,7 @@ class BusinessList extends React.Component {
                     zipCode={this.props.businessess[i].zipCode}
                     category={this.props.businessess[i].category}
                     rating={this.props.businessess[i].rating}
-                    reviewCount={this.props.businessess[i].reviewCount}/>
+                    reviewCount={this.props.businessess[i].reviewCount}/>)
 
                 })}
             </div>
