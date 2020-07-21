@@ -1,10 +1,12 @@
-import React from 'react';
+//import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import SearchBar from './components/SearchBar/SearchBar';
 import BusinessList from './components/BusinessList/BusinessList' ;
 import searchYelpApi from './util/Yelp.js'
 
-class App extends React.Component {
+/*
+ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -33,5 +35,27 @@ class App extends React.Component {
   }
 
 }
+
+*/
+ // react class components is used above, react hooks does all the binding with the use of closures.
+ 
+
+const App = () =>{
+  const [businessess, setBusinesses] = useState([]);
+  const searchYelp = async (term, location, sortBy) =>{
+    const search = await searchYelpApi(term, location, sortBy);
+    setBusinesses(search);
+  };
+
+  return(
+      <div className="App">
+        <h1>ravenous</h1>
+        <SearchBar searchYelp={searchYelp} />
+        <BusinessList businessess={businessess} /> 
+      </div>
+
+  )
+}
+
 
 export default App;

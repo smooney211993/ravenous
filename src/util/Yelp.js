@@ -5,12 +5,12 @@ const searchYelpApi = async (term, location, sortBy)=>{
        
 
     const response = await fetch(`${cors}https://api.yelp.com/v3/businesses/search?term=${term}&location=${location}&sort_by=${sortBy}`,{ headers: {Authorization: `Bearer ${apiKey}`}})
-    
+    let modifiedData;
     if(response.ok){
         const jsonResponse = await response.json()
         console.log(jsonResponse)
        
-        const modifiedData = jsonResponse.businesses.map((business)=>{
+         modifiedData = jsonResponse.businesses.map((business)=>{
            return {
                 id: business.id,
                 imageSrc: business.image_url,
@@ -27,9 +27,9 @@ const searchYelpApi = async (term, location, sortBy)=>{
 
             }
         })
-        return modifiedData
+       
     }
-    
+    return modifiedData
        
    } catch (error) {
        console.log(error)
