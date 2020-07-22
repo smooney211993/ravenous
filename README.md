@@ -1,4 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is the first react project in codeacademy. Its an application that interacts with the yelp API. Its a single page search application for restaurants that allows you to narrow the search via location and other filters.
+
+Codeacademy only teaches react via the use of class components, however ive decided to write this application using react hooks to futher showcase my knowledge of react.
+Both components and hooks are displayed to compare.
 
 ## Available Scripts
 
